@@ -53,24 +53,48 @@ class UserController extends BaseController
        
 
         if (!$this->validate([
-            'nama'  => 'required|is_unique[user.nama]',
-            'npm'   => 'required|is_unique[user.npm]',
+            'nama'  => 'required',
+            'npm'   => 'required',
             'kelas' => 'required' 
         ])){
             session()->setFlashdata('nama_kelas');
             return redirect()->back()->withInput()->with('nama_kelas', $nama_kelas);
+        }
+        $path ='assets/uploads/img/';
+        $foto = $this->request->getFile('foto');
+        
+        $name = $foto->getRandomName();
+
+        // dd($name);
+
+        if($foto->move($path, $name)){
+            $foto = base_url($path . $name);
         }
 
         $this->userModel->saveUser([
             'nama' => $this->request->getVar('nama'),
             'id_kelas' => $this->request->getVar('kelas'),
             'npm' => $this->request->getVar('npm'),
+            'foto' => $foto,
         ]);
         $data = [
             'nama' => $this->request->getVar('nama'),
             'kelas' => $this->request->getVar('kelas'),
             'npm' => $this->request->getVar('npm'),
         ];
+        
         return redirect()->to('/user');
+    }
+
+    public function show($id){
+        $user = $this->userModel->getUser($id);
+
+        $data = [
+            'title' => 'Profile',
+            'user' => $user,
+        ];
+        
+        // dd($data);
+        return view('profile', $data);
     }
 }

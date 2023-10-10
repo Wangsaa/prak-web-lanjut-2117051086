@@ -3,22 +3,22 @@
 <div>
 <body>
     <center>
-    <img class="img" src="<?=base_url()?>messi.jpg" alt="SIUUUr">
+    <img class="img" src="<?= $user['foto'] ?? '<default-foto>'?>" alt="">
     <table class="table">
     <tr>
         <td>Nama</td>
         <td>:</td>
-        <td><?= $nama ?></td>
+        <td><?= $user['nama'] ?></td>
     </tr>
     <tr>
         <td>Kelas</td>
         <td>:</td>
-        <td><?= $kelas ?></td>
+        <td><?= $user['nama_kelas'] ?></td>
     </tr>
     <tr>
         <td>NPM</td>
         <td>:</td>
-        <td><?= $npm ?></td>
+        <td><?= $user['npm'] ?></td>
     </tr>
     </table>
     </center>
