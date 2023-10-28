@@ -1,0 +1,32 @@
+.form{
+    margin-top: 7%;
+
+}
+
+.containers{
+    border: 3px solid rgb(201, 201, 201);
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 15%;
+    padding-bottom: 5%;
+    border-radius: 5%;
+}
+
+.img{
+    width: 50%;
+    margin-top: 10%;
+    border-radius: 50%;
+}
+
+.img2{
+    width: 50%;
+}
+.table{
+    margin-top: 1%;
+}
+.upload-foto{
+    margin-top: 5%;
+    margin-left: 23%;
+    border: 1px solid black;
+    margin-right: 15%;
+}
