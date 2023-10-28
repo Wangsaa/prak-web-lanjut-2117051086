@@ -1,10 +1,10 @@
 <?= $this->extend('layouts/app')?>
 <?= $this->section('content') ?>
-<div>
+<div class="containers">
 <body>
     <center>
     <img class="img" src="<?= $user['foto'] ?? '<default-foto>'?>" alt="">
-    <table class="table">
+    <table>
     <tr>
         <td>Nama</td>
         <td>:</td>
@@ -20,6 +20,7 @@
         <td>:</td>
         <td><?= $user['npm'] ?></td>
     </tr>
+    </div>
     </table>
     </center>
     </div>

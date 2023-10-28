@@ -138,6 +138,12 @@ class UserController extends BaseController
 
     }
 
+    // public function kelas(){
+
+
+    //     return view('list_kelas',);
+    // }
+
     public function show($id){
         $user = $this->userModel->getUser($id);
 
