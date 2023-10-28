@@ -7,9 +7,9 @@
   <form class="form" action="<?= base_url('/user/' . $user['id'])?>" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_method" value="PUT">
   <?= csrf_field() ?>
-  <label for="upload">Foto</label>
-  <img src="<?= $user['foto'] ?? '<default-foto>' ?>">
-  <input type="file" id="myFile" name="foto">
+  <label for="upload">Foto</label><br>
+  <img src="<?= $user['foto'] ?? '<default-foto>' ?>" class="img2">
+  <input type="file" id="myFile" name="foto"><br>
   <label for="fname">Nama:</label><br>
   <input class="<?= (empty(validation_show_error('nama')))?'':'is_valid'?>" value="<?= $user['nama']?>" type="text" id="nama" name="nama"><br>
   <div class="invalid-feedback">
